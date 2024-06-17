@@ -46,11 +46,17 @@ Before you begin, ensure you have met the following requirements:
     ```sh
     cd backend
     ```
-2. Install the dependencies:
+2. Create a `.env` file in the `backend/config` directory and populate it with your environment variables:
+    ```sh
+    PORT = 4000
+    FRONTEND_URL = http://localhost:5173
+    MONGO_URI = <your_mongodb_uri>
+    ```
+3. Install the dependencies:
     ```sh
     npm install
     ```
-3. Start the backend server:
+4. Start the backend server:
     ```sh
     npm run dev
     ```
@@ -75,14 +81,22 @@ Before you begin, ensure you have met the following requirements:
 - Make a reservation through the provided form.
 
 ## API Endpoints
+### Employee Endpoints
+- **POST /register**: Register a new employee
+  - Request Body: `{ "name": "string", "email": "string", "password": "string" }`
+- **POST /login**: Login an employee
+  - Request Body: `{ "email": "string", "password": "string" }`
+
+### Reservation Endpoints
 - **POST /api/v1/reservation**: Send a reservation
+  - Request Body: `{ "firstName": "string", "lastName": "string", "email": "string", "phone": "string", "date": "string", "time": "string" }`
 
 ## Folder Structure
 ```sh
 restaurant-reservation-system/
 ├── backend/
 │   ├── config/
-│   │   └── config.env
+│   │   └── config.envexample
 │   ├── controllers/
 │   │   └── reservation.js
 │   ├── database/
@@ -90,9 +104,11 @@ restaurant-reservation-system/
 │   ├── error/
 │   │   └── error.js
 │   ├── models/
-│   │   └── reservationSchema.js
+│   │   ├── reservationSchema.js
+│   │   └── Employee.js
 │   ├── routes/
-│   │   └── reservationRoutes.js
+│   │   ├── reservationRoutes.js
+│   │   └── employeeRoutes.js
 │   ├── app.js
 │   ├── server.js
 │   └── package.json
