@@ -9,8 +9,6 @@
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 This project is a Restaurant Reservation System that allows users to make reservations online. It features a backend built with Node.js, Express, and MongoDB, and a frontend built with React.
